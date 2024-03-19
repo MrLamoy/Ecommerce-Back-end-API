@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "25dd7392-5ca7-476a-934f-4c16cf7be710",
+		"name": "csp2-b337-guillen-jubay-postman-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31000432"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Junel\",\r\n    \"lastName\": \"Jubay\",\r\n    \"email\": \"customer@gmail.com\",\r\n    \"mobileNo\": \"09052715686\",\r\n    \"password\": \"customer1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "userDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDQ1MjFhOWVhZDE4NTFmZTZhOTAzNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTcwODQxMzQ4NX0._SwX-7Lgc3X5m45vZIS6H1YPwxnnAmo2nZxmKNbfH_U"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{aws}}/users/details"
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDQ1MjFhOWVhZDE4NTFmZTZhOTAzNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTcwODQxMzQ4NX0._SwX-7Lgc3X5m45vZIS6H1YPwxnnAmo2nZxmKNbfH_U"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"newPassword\": \"admin1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/users/update-password"
+					},
+					"response": []
+				},
+				{
+					"name": "setUserAsAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDQ1MjFhOWVhZDE4NTFmZTZhOTAzNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA4NDE0MTc4fQ.QF-U1YfHeu1foxDvsnCgpHdUvLt1oXppzHHgmh0xVFk"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"url": "{{aws}}/users/65cb411fd8035a50c71440bf/update-to-admin"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzBjYzJiYTEzYTRmOGQyYjQ3NjFiYiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA3MTM3Mzk4fQ.TGrtJqEz2xp7cagTKtrMVoTGnKUJPeHB1NOgB7YARvw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Any\",\r\n    \"description\" : \"kfjdf\",\r\n    \"price\" : 1500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProducts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDQ1MjFhOWVhZDE4NTFmZTZhOTAzNCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA4NDE0MTc4fQ.QF-U1YfHeu1foxDvsnCgpHdUvLt1oXppzHHgmh0xVFk"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{aws}}/products/all"
+					},
+					"response": []
+				},
+				{
+					"name": "getActiveProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Cherry Mobile\",\r\n    \"description\" : \"Strong\",\r\n    \"price\" : 1500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/products/active"
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzBjYzJiYTEzYTRmOGQyYjQ3NjFiYiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA3MTM3Mzk4fQ.TGrtJqEz2xp7cagTKtrMVoTGnKUJPeHB1NOgB7YARvw"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Samsung\",\r\n    \"description\" : \"Super\",\r\n    \"price\" : 2500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/products/65c0fe61b63ff2ea91c88cf5"
+					},
+					"response": []
+				},
+				{
+					"name": "archiveProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzBjYzJiYTEzYTRmOGQyYjQ3NjFiYiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA3MTM3Mzk4fQ.TGrtJqEz2xp7cagTKtrMVoTGnKUJPeHB1NOgB7YARvw"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": "{{aws}}/products/archive/65c0fe61b63ff2ea91c88cf5"
+					},
+					"response": []
+				},
+				{
+					"name": "activateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzBjYzJiYTEzYTRmOGQyYjQ3NjFiYiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA3MTM3Mzk4fQ.TGrtJqEz2xp7cagTKtrMVoTGnKUJPeHB1NOgB7YARvw"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": "{{aws}}/products/activate/65c0fe61b63ff2ea91c88cf5"
+					},
+					"response": []
+				},
+				{
+					"name": "retrieveSingleProduct",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{aws}}/products/65c0fe61b63ff2ea91c88cf5"
+					},
+					"response": []
+				},
+				{
+					"name": "searchProduct",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productName\": \"Cherry Mobile\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/products/search"
+					},
+					"response": []
+				},
+				{
+					"name": "search-price-range",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Any\",\r\n  \"minPrice\": 0,\r\n  \"maxPrice\": 100000\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/products/search-price-range"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "getUsersCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\" : \"65d454189ead1851fe6a903c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://ec2-18-218-180-213.us-east-2.compute.amazonaws.com/b2/carts/addToCart"
+					},
+					"response": []
+				},
+				{
+					"name": "addToCart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\" : \"65d454189ead1851fe6a903c\",\r\n  \"productId\": \"65c0dd41e39b28539fcfa520\", \r\n  \"quantity\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/carts/addToCart"
+					},
+					"response": []
+				},
+				{
+					"name": "update quantity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\" : \"65d454189ead1851fe6a903c\",\r\n  \"productId\": \"65c0dd41e39b28539fcfa520\",\r\n  \"quantity\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/carts/udpateQuantity"
+					},
+					"response": []
+				},
+				{
+					"name": "removeCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzIwZjEyNjY5YzIyMzlhNzk0NTZmNiIsImVtYWlsIjoiY3VzdG9tZXJAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTcwNzIxOTg2NH0.xP0YM4WlwNP1W5f1aS_8BtMYHn1KPqrUyhYjUrejrRo"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"65c0dd41e39b28539fcfa520\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/carts/65c2e52881deb4179a74edbd/removeFromCart"
+					},
+					"response": []
+				},
+				{
+					"name": "clearAllCart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\" : \"65d454189ead1851fe6a903c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/carts/clearCart"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "chekcoutOrder",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\" : \"65d454189ead1851fe6a903c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{aws}}/orders/checkout/"
+					},
+					"response": []
+				},
+				{
+					"name": "myOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDQ1NDE4OWVhZDE4NTFmZTZhOTAzYyIsImVtYWlsIjoiY3VzdG9tZXJAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTcwODQyMDUyOH0.gtegZPKKq8JHIRlsAyTrQ32ihdC1N_MzVzHD74FNnG4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{aws}}/orders/my-orders"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzJlNTI4ODFkZWI0MTc5YTc0ZWRiZCIsImVtYWlsIjoiY3VzdG9tZXIwMkBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MDczMDA5NDN9.BhHvyJNfGJ7KUkkqtYG2ccq_v2Pg1VuxfybMF1kutCw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{aws}}/orders/all-orders"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "aws",
+			"value": "http://ec2-18-218-180-213.us-east-2.compute.amazonaws.com/b2"
+		}
+	]
+}
